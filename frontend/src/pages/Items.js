@@ -27,6 +27,22 @@ function Items() {
     if (items.length > 0) setLoading(false);
   }, [items]);
 
+  // 🔹 Stats state
+  const [stats, setStats] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetchItems(controller.signal);
+
+    // 🔹 Fetch stats
+    fetch("http://localhost:3001/api/stats")
+      .then((res) => res.json())
+      .then((data) => setStats(data))
+      .catch(() => {});
+
+    return () => controller.abort();
+  }, [fetchItems]);
+
   /** SEARCH */
   const filteredItems = useMemo(() => {
     return items.filter((item) => {
@@ -74,6 +90,19 @@ function Items() {
           {showForm ? "Close" : "+ Add Item"}
         </button>
       </div>
+
+      {/* 🔹 STATS BOX */}
+      {stats && (
+        <div className="stats-box">
+          <p>
+            <strong>Total Items:</strong> {stats.total}
+          </p>
+          <p>
+            <strong>Average Price:</strong> $
+            {(stats.averagePrice).toFixed(2)}
+          </p>
+        </div>
+      )}
       {/*Add Item Modal*/}
       {showForm && (
         <div className="modal-overlay" onClick={() => setShowForm(false)}>

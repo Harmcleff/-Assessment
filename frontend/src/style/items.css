@@ -407,7 +407,7 @@
   border-radius: 8px;
   font-size: 16px;
   outline: none;
-  box-sizing: border-box;     /* important: prevents right overflow */
+  box-sizing: border-box;     
 }
 
 .modal-input:focus,
@@ -438,4 +438,20 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+.stats-box {
+  background: #f5f7ff;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #d4dcff;
+  margin-bottom: 18px;
+  font-family: "Inter", sans-serif;
+}
+
+.stats-box p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #1a1a1a;
 }

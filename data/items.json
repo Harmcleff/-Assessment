@@ -64,5 +64,29 @@
     "name": "Television",
     "price": 5000,
     "category": "Electronics"
+  },
+  {
+    "id": 1763795724882,
+    "name": "Mp3 player",
+    "price": 2000,
+    "category": "Electronics"
+  },
+  {
+    "id": 1763795752081,
+    "name": "Chair",
+    "price": 3000,
+    "category": "General"
+  },
+  {
+    "id": 1763795904827,
+    "name": "Table",
+    "price": 1000,
+    "category": "General"
+  },
+  {
+    "id": 1763796099789,
+    "name": "Rug",
+    "price": 20,
+    "category": "General"
   }
 ]

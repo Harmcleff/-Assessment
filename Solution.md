@@ -1,5 +1,3 @@
-# SOLUTION.md
-
 ## 1. Backend Improvements
 
 ### 1.1 Replaced Blocking I/O With Async I/O

@@ -1,15 +1,15 @@
-const express = require('express');
-const fs = require('fs').promises;
-const path = require('path');
-const { updateStats } = require('./stats');
+const express = require("express");
+const fs = require("fs").promises;
+const path = require("path");
+const { updateStats } = require("./stats");
 
 const router = express.Router();
-const DATA_PATH = path.join(__dirname, '../../../data/items.json');
+const DATA_PATH = path.join(__dirname, "../../../data/items.json");
 
 // Load items.json with error safety
 async function readItems() {
   try {
-    const raw = await fs.readFile(DATA_PATH, 'utf8');
+    const raw = await fs.readFile(DATA_PATH, "utf8");
     return JSON.parse(raw);
   } catch (err) {
     throw new Error("Failed to load items database");
@@ -25,26 +25,35 @@ async function writeItems(items) {
   }
 }
 
-// GET /api/items  (pagination + search)
-router.get('/', async (req, res, next) => {
+// GET api/items  (pagination + search)
+router.get("/", async (req, res, next) => {
   try {
     const items = await readItems();
-    const { page = 1, pageSize = 10, q } = req.query;
+    const { page, pageSize, q } = req.query;
 
-    // Validate and sanitize pagination inputs
-    const p = Math.max(1, parseInt(page) || 1);
-    const ps = Math.max(1, parseInt(pageSize) || 10);
-
-    // Filter by search
     let results = items;
+
+    // Search filter
     if (q) {
       const search = q.toLowerCase();
-      results = results.filter(item =>
-        item.name.toLowerCase().includes(search)
-      );
+      results = results.filter((item) => {
+        const name = item?.name?.toLowerCase() || "";
+        return name.includes(search);
+      });
     }
 
-    // Pagination
+    // If NO pagination params provided → return ALL items
+    if (!page && !pageSize) {
+      return res.json({
+        items: results,
+        total: results.length,
+      });
+    }
+
+    // Otherwise apply pagination
+    const p = parseInt(page) || 1;
+    const ps = parseInt(pageSize) || 10;
+
     const start = (p - 1) * ps;
     const paginated = results.slice(start, start + ps);
 
@@ -52,16 +61,15 @@ router.get('/', async (req, res, next) => {
       items: paginated,
       total: results.length,
       page: p,
-      pageSize: ps
+      pageSize: ps,
     });
-
   } catch (err) {
     next(err);
   }
 });
 
 // GET /api/items/:id
-router.get('/:id', async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
     const id = parseInt(req.params.id);
 
@@ -71,7 +79,7 @@ router.get('/:id', async (req, res, next) => {
     }
 
     const items = await readItems();
-    const item = items.find(i => i.id === id);
+    const item = items.find((i) => i.id === id);
 
     if (!item) {
       return res.status(404).json({ error: "Item not found" });
@@ -84,7 +92,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // POST /api/items
-router.post('/', async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   try {
     const { name, price, category } = req.body;
 
@@ -105,7 +113,7 @@ router.post('/', async (req, res, next) => {
       id: Date.now(),
       name,
       price: numericPrice,
-      category: category || "General"
+      category: category || "General",
     };
 
     items.push(newItem);

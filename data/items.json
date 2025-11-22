@@ -30,98 +30,27 @@
     "price": 1199
   },
   {
-    "id": 1763755086708,
-    "name": "Samsung",
-    "price": 3000
+    "id": 1763776998928,
+    "name": "DVD",
+    "price": 10000,
+    "category": "General"
   },
   {
-    "id": 1763755374452,
-    "name": "itel",
-    "price": 3000
+    "id": 1763777011338,
+    "name": "Tecno",
+    "price": 39999,
+    "category": "General"
   },
   {
-    "id": 1763755678677,
-    "name": "tecno",
-    "price": 3000
+    "id": 1763777019682,
+    "name": "TV",
+    "price": 19999,
+    "category": "General"
   },
   {
-    "id": 1763755750511,
-    "name": "Nokia",
-    "price": 3000
-  },
-  {
-    "id": 1763755935556,
-    "name": "HP",
-    "price": 1000
-  },
-  {
-    "id": 1763756024768,
-    "name": "DELL",
-    "price": 900
-  },
-  {
-    "id": 1763763347362,
-    "name": "Fridge",
-    "price": "1000"
-  },
-  {
-    "id": 1763764435125,
-    "name": "Test Item",
-    "price": 99.99,
-    "category": "Test"
-  },
-  {
-    "id": 1763764435155
-  },
-  {
-    "id": 1763764603402,
-    "name": "Test Item",
-    "price": 99.99,
-    "category": "Test"
-  },
-  {
-    "id": 1763764603426
-  },
-  {
-    "id": 1763764715763,
-    "name": "Test Item",
-    "price": 99.99,
-    "category": "Test"
-  },
-  {
-    "id": 1763764715785
-  },
-  {
-    "id": 1763765036705,
-    "name": "Test Item",
-    "price": 99.99,
-    "category": "Test"
-  },
-  {
-    "id": 1763765036726
-  },
-  {
-    "id": 1763765313637,
-    "name": "Test Item",
-    "price": 99.99,
-    "category": "Test"
-  },
-  {
-    "id": 1763765386611,
-    "name": "Test Item",
-    "price": 99.99,
-    "category": "Test"
-  },
-  {
-    "id": 1763765532840,
-    "name": "Test Item",
-    "price": 99.99,
-    "category": "Test"
-  },
-  {
-    "id": 1763770150142,
-    "name": "Test Item",
-    "price": 99.99,
-    "category": "Test"
+    "id": 1763777030839,
+    "name": "CD",
+    "price": 300000,
+    "category": "General"
   }
 ]

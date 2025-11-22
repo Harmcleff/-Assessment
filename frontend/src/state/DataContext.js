@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useState } from 'react';
+import React, { createContext, useCallback, useContext, useState } from "react";
 
 const DataContext = createContext();
 
@@ -7,12 +7,12 @@ export function DataProvider({ children }) {
 
   const fetchItems = useCallback(async (signal) => {
     try {
-      const res = await fetch('http://localhost:3001/api/items?limit=500', { signal });
+      const res = await fetch("http://localhost:3001/api/items", { signal });
       const json = await res.json();
-      setItems(json);
+      console.log(json)
+     setItems(Array.isArray(json.items) ? json.items : []);
     } catch (err) {
-      // Ignore abort errors (normal behavior)
-      if (err.name !== 'AbortError') {
+      if (err.name !== "AbortError") {
         console.error(err);
       }
     }

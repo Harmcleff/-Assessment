@@ -29,9 +29,10 @@ function Items() {
 
   /** SEARCH */
   const filteredItems = useMemo(() => {
-    return items.filter((item) =>
-      item.name.toLowerCase().includes(search.toLowerCase())
-    );
+    return items.filter((item) => {
+      const name = item?.name?.toLowerCase() || "";
+      return name.includes(search.toLowerCase());
+    });
   }, [items, search]);
 
   /** PAGINATION */
@@ -65,15 +66,11 @@ function Items() {
 
   return (
     <div className="items-container">
-
       {/* TITLE + ADD BUTTON */}
       <div className="items-header">
         <h2 className="items-title">Items List</h2>
 
-        <button
-          className="add-btn"
-          onClick={() => setShowForm(!showForm)}
-        >
+        <button className="add-btn" onClick={() => setShowForm(!showForm)}>
           {showForm ? "Close" : "+ Add Item"}
         </button>
       </div>
@@ -85,18 +82,14 @@ function Items() {
             type="text"
             placeholder="Item name"
             value={newItem.name}
-            onChange={(e) =>
-              setNewItem({ ...newItem, name: e.target.value })
-            }
+            onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
           />
 
           <input
             type="number"
             placeholder="Price"
             value={newItem.price}
-            onChange={(e) =>
-              setNewItem({ ...newItem, price: e.target.value })
-            }
+            onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
           />
 
           <button

@@ -1,7 +1,127 @@
 [
-  { "id": 1, "name": "Laptop Pro", "category": "Electronics", "price": 2499 },
-  { "id": 2, "name": "Noise Cancelling Headphones", "category": "Electronics", "price": 399 },
-  { "id": 3, "name": "Ultra‑Wide Monitor", "category": "Electronics", "price": 999 },
-  { "id": 4, "name": "Ergonomic Chair", "category": "Furniture", "price": 799 },
-  { "id": 5, "name": "Standing Desk", "category": "Furniture", "price": 1199 }
+  {
+    "id": 1,
+    "name": "Laptop Pro",
+    "category": "Electronics",
+    "price": 2499
+  },
+  {
+    "id": 2,
+    "name": "Noise Cancelling Headphones",
+    "category": "Electronics",
+    "price": 399
+  },
+  {
+    "id": 3,
+    "name": "Ultra‑Wide Monitor",
+    "category": "Electronics",
+    "price": 999
+  },
+  {
+    "id": 4,
+    "name": "Ergonomic Chair",
+    "category": "Furniture",
+    "price": 799
+  },
+  {
+    "id": 5,
+    "name": "Standing Desk",
+    "category": "Furniture",
+    "price": 1199
+  },
+  {
+    "id": 1763755086708,
+    "name": "Samsung",
+    "price": 3000
+  },
+  {
+    "id": 1763755374452,
+    "name": "itel",
+    "price": 3000
+  },
+  {
+    "id": 1763755678677,
+    "name": "tecno",
+    "price": 3000
+  },
+  {
+    "id": 1763755750511,
+    "name": "Nokia",
+    "price": 3000
+  },
+  {
+    "id": 1763755935556,
+    "name": "HP",
+    "price": 1000
+  },
+  {
+    "id": 1763756024768,
+    "name": "DELL",
+    "price": 900
+  },
+  {
+    "id": 1763763347362,
+    "name": "Fridge",
+    "price": "1000"
+  },
+  {
+    "id": 1763764435125,
+    "name": "Test Item",
+    "price": 99.99,
+    "category": "Test"
+  },
+  {
+    "id": 1763764435155
+  },
+  {
+    "id": 1763764603402,
+    "name": "Test Item",
+    "price": 99.99,
+    "category": "Test"
+  },
+  {
+    "id": 1763764603426
+  },
+  {
+    "id": 1763764715763,
+    "name": "Test Item",
+    "price": 99.99,
+    "category": "Test"
+  },
+  {
+    "id": 1763764715785
+  },
+  {
+    "id": 1763765036705,
+    "name": "Test Item",
+    "price": 99.99,
+    "category": "Test"
+  },
+  {
+    "id": 1763765036726
+  },
+  {
+    "id": 1763765313637,
+    "name": "Test Item",
+    "price": 99.99,
+    "category": "Test"
+  },
+  {
+    "id": 1763765386611,
+    "name": "Test Item",
+    "price": 99.99,
+    "category": "Test"
+  },
+  {
+    "id": 1763765532840,
+    "name": "Test Item",
+    "price": 99.99,
+    "category": "Test"
+  },
+  {
+    "id": 1763770150142,
+    "name": "Test Item",
+    "price": 99.99,
+    "category": "Test"
+  }
 ]

@@ -1,0 +1,198 @@
+/* --- Global Font --- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+.items-container {
+  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  color: #1e1e1e;
+}
+
+.items-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+/* --- Item Rows --- */
+.item-row {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 14px;
+  box-sizing: border-box; /* ensures padding stays inside width */
+  overflow: hidden;       /* ensures long text doesn't force scroll */
+  white-space: nowrap;    /* (optional) keep text on one line */
+  text-overflow: ellipsis;/* (optional) adds ... when text is long */
+  border-bottom: 1px solid #f1f1f1;
+  color: #333;
+}
+
+
+.item-row:hover {
+  background: #fafafa;
+}
+
+
+.item-link {
+  color: #1b4cff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.item-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Skeleton Loader --- */
+.skeleton-row {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-bar {
+  width: 60%;
+  height: 18px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  animation: shimmer 1.4s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -50% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+/* --- Empty State --- */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.empty-state h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 15px;
+  color: #666;
+}
+
+
+.search-box {
+  width: 300px;
+  padding: 10px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.pagination {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  background: #4a63e7;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Header (Title + Button) */
+.items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.add-btn {
+  background: #4f46e5;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;            
+  outline: none;           
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #4338ca;
+}
+
+
+.add-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.add-form {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background: #fafafa;
+  animation: dropdown 0.25s ease;
+}
+
+@keyframes dropdown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.add-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: "Inter", sans-serif;
+}
+
+.add-form button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.add-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

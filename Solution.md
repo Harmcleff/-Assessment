@@ -147,17 +147,3 @@ All critical user flows are covered:
 * User interactions (clicks, form submissions, navigation)
 * Edge cases (empty states, pagination boundaries)
 
----
-
-## Conclusion
-
-The refactor significantly improves:
-
-* **Performance** (async I/O, caching)
-* **Reliability** (abortable fetch, correct ports)
-* **Maintainability** (clearer code structure)
-* **Correctness** (validation + error handling)
-* **UX stability** (memory-leak elimination)
-* **Testability** (comprehensive test coverage)
-
-The final implementation is efficient, idiomatic, and suitable for production-like assessment scenarios while keeping the architecture simple.

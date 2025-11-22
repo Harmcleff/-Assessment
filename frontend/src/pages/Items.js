@@ -106,11 +106,12 @@ function Items() {
             <strong>Total Items:</strong> {stats.total}
           </p>
           <p>
-            <strong>Average Price:</strong> ${stats.averagePrice.toFixed(0)}
+            <strong>Average Price:</strong> $
+            {Number(stats.averagePrice.toFixed(0)).toLocaleString()}
           </p>
         </div>
       )}
-      
+
       {/*Add Item Modal*/}
       {showForm && (
         <div className="modal-overlay" onClick={() => setShowForm(false)}>

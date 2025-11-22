@@ -52,5 +52,11 @@
     "name": "CD",
     "price": 300000,
     "category": "General"
+  },
+  {
+    "id": 1763793491853,
+    "name": "Laptop",
+    "price": 20000,
+    "category": "Electronics"
   }
 ]

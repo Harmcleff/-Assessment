@@ -23,10 +23,10 @@
   height: 100%;
   width: 100%;
   padding: 0 14px;
-  box-sizing: border-box; /* ensures padding stays inside width */
-  overflow: hidden;       /* ensures long text doesn't force scroll */
-  white-space: nowrap;    /* (optional) keep text on one line */
-  text-overflow: ellipsis;/* (optional) adds ... when text is long */
+  box-sizing: border-box; 
+  overflow: hidden;       
+  white-space: nowrap;    
+  text-overflow: ellipsis;
   border-bottom: 1px solid #f1f1f1;
   color: #333;
 }
@@ -195,4 +195,247 @@
 .add-form button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+
+/* Add Item Form */
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Text Inputs */
+.input-field {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-field:focus {
+  border-color: #4e7cff;
+  box-shadow: 0 0 4px rgba(78,124,255,0.4);
+}
+
+/* CATEGORY SELECT */
+.select-field {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background: white;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.select-field:focus {
+  border-color: #4e7cff;
+  box-shadow: 0 0 4px rgba(78,124,255,0.4);
+}
+
+.add-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 480px;
+  margin: auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-form input,
+.add-form select {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s ease;
+  box-sizing: border-box;
+}
+
+.add-form input:focus,
+.add-form select:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.2);
+}
+
+.add-form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.add-form button:hover:not(:disabled) {
+  background: #0066d6;
+}
+
+/* Modal Background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal Container */
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  width: 420px;
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Inputs */
+.modal-inputs input,
+.modal-inputs select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.modal-inputs input:focus,
+.modal-inputs select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 3px rgba(37, 99, 235, 0.4);
+}
+
+/* Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-btn:disabled {
+  background: #9bb9f3;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background: #ddd;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* MODAL BOX */
+.modal-box {
+  background: white;
+  width: 500px;
+  padding: 32px;              
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;    
+}
+
+/* INPUT + SELECT fields */
+.modal-input,
+.modal-select {
+  width: 100%;
+  padding: 14px 16px;        
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;     /* important: prevents right overflow */
+}
+
+.modal-input:focus,
+.modal-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+/* BUTTON ROW */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.submit-btn {
+  background: #1a73e8;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #e8e8e8;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }

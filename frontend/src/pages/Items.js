@@ -74,48 +74,78 @@ function Items() {
           {showForm ? "Close" : "+ Add Item"}
         </button>
       </div>
-
-      {/*  ADD-ITEM DROPDOWN FORM */}
+      {/*Add Item Modal*/}
       {showForm && (
-        <div className="add-form">
-          <input
-            type="text"
-            placeholder="Item name"
-            value={newItem.name}
-            onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
-          />
+        <div className="modal-overlay" onClick={() => setShowForm(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h3>Add New Item</h3>
 
-          <input
-            type="number"
-            placeholder="Price"
-            value={newItem.price}
-            onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
-          />
+            <div className="modal-inputs">
+              <input
+                type="text"
+                className="modal-input"
+                placeholder="Item name"
+                value={newItem.name}
+                onChange={(e) =>
+                  setNewItem({ ...newItem, name: e.target.value })
+                }
+              />
 
-          <button
-            disabled={saving}
-            onClick={async () => {
-              if (!newItem.name || !newItem.price)
-                return alert("Please fill all fields");
+              <input
+                type="number"
+                className="modal-input"
+                placeholder="Price"
+                value={newItem.price}
+                onChange={(e) =>
+                  setNewItem({ ...newItem, price: e.target.value })
+                }
+              />
 
-              setSaving(true);
-              try {
-                await fetch("http://localhost:3001/api/items", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(newItem),
-                });
+              <select
+                className="modal-select"
+                value={newItem.category}
+                onChange={(e) =>
+                  setNewItem({ ...newItem, category: e.target.value })
+                }
+              >
+                <option value="Furniture">Furniture</option>
+                <option value="Electronics">Electronics</option>
+                <option value="General">General</option>
+              </select>
+            </div>
 
-                setNewItem({ name: "", price: "" });
-                setShowForm(false);
-                fetchItems();
-              } finally {
-                setSaving(false);
-              }
-            }}
-          >
-            {saving ? "Saving..." : "Submit"}
-          </button>
+            <div className="modal-buttons">
+              <button
+                className="submit-btn"
+                disabled={saving}
+                onClick={async () => {
+                  if (!newItem.name || !newItem.price)
+                    return alert("Please fill all fields");
+
+                  setSaving(true);
+                  try {
+                    await fetch("http://localhost:3001/api/items", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify(newItem),
+                    });
+
+                    setNewItem({ name: "", price: "", category: "General" });
+                    setShowForm(false);
+                    fetchItems();
+                  } finally {
+                    setSaving(false);
+                  }
+                }}
+              >
+                {saving ? "Saving..." : "Submit"}
+              </button>
+
+              <button className="cancel-btn" onClick={() => setShowForm(false)}>
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
